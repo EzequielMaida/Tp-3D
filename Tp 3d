@@ -1,0 +1,129 @@
+Nocturnal Spellcaster
+
+Alumno: Ezequiel Maida
+
+Género/s: Acción, Aventura, RPG
+
+Camara: Tercera persona
+
+  Personaje Principal:
+
+  Tipo: Vampiro Hechicero
+
+Habilidades:
+
+Magia Oscura: Ataques básicos de sombras y hechizos sencillos.
+
+Bastón Mágico: Un único tipo de ataque que amplifica la magia.
+
+Habilidades Vampíricas: Regeneración lenta en la oscuridad.
+
+Historia: Un vampiro hechicero debe atravesar una mazmorra para recuperar un artefacto mágico, enfrentándose a goblins y magos.
+
+Mecánicas de Juego:
+
+Combate:
+Sistema de combate simple con ataques mágicos básicos y regeneración de vida.
+
+Exploración:
+Mazmorra lineal con algunas habitaciones y corredores, sin puzzles complejos.
+
+Progresión:
+1 solo nivel con un aumento de poder en cada habitacion del unico mapa.
+
+Interfaz y Controles:
+Controles: Movimientos con teclado y mouse, ataques básicos con botones dedicados.
+
+HUD: Información básica de vida y maná.
+
+Objetivo Final: Llegar a la habitación final de la mazmorra y derrotar al jefe para obtener el artefacto mágico.
+
+Adicional:
+
+Quests: No
+
+Equipo: No
+
+Cutscenes: No
+
+Minimap: Sí (un minimapa básico para guiar al jugador a través de la mazmorra
+
+Disparos:
+
+Proyectiles de Sombras: Descripción: Disparos mágicos oscuros que se lanzan en línea recta.
+
+Efecto: Causa daño directo al impactar a los enemigos.
+
+Visual: Efecto visual de sombras o energía oscura.
+
+Ráfaga de Oscuridad: Descripción: Lanza una serie rápida de proyectiles de sombras en un área del frente.
+
+Efecto: Daño en un área específica, ideal para enfrentar grupos de enemigos.
+
+Visual: Varias pequeñas sombras o destellos que se disparan en rápida sucesión.
+
+Bola de Sombra:
+
+Descripción: Disparo de un proyectil más grande que explota al impactar.
+
+Efecto: Causa daño adicional en un área alrededor del impacto.
+
+Visual: Una esfera oscura que explota en un estallido de sombras al tocar el suelo o un enemigo.
+
+Rayo de Oscuridad:
+
+Descripción: Un rayo continuo de energía oscura que se dirige hacia el enemigo.
+
+Efecto: Daño sostenido mientras el rayo está en contacto con el enemigo.
+
+Visual: Un rayo de energía oscura que se mantiene mientras el jugador mantiene presionado el botón de disparo.
+
+
+Pickup:
+
+Maná: Descripción: Frascos o orbes que restauran una cantidad fija de maná.
+
+Uso: Permite al jugador lanzar más hechizos sin necesidad de esperar la regeneración automática.
+
+Vida:
+
+Descripción: Cristales o esferas que restauran una parte de la salud del jugador.
+
+Uso: Ayuda a recuperar vida durante o después de combates.
+
+Pociones de Magia:
+
+Descripción: Pociones que restauran completamente el maná del jugador.
+
+Uso: Utilizadas en situaciones críticas para recuperar maná de inmediato.
+
+Llaves:
+Descripción: Llaves que abren puertas bloqueadas en la mazmora.
+
+Uso: Permiten al jugador avanzar a nuevas áreas sin complicar demasiado el diseño de niveles.
+
+Equipamiento
+Bastón Mágico:
+Descripción: El único arma del personaje.
+
+Función: Lanza hechizos mágicos básicos y no necesita mejoras adicionales.
+
+Orbes de Vida:
+Descripción: Recolectables que restauran salud.
+
+Función: Restauran una cantidad fija de vida cuando se recogen.
+
+Orbes de Maná:
+
+Descripción: Recolectables que restauran maná.
+
+Función: Restauran una cantidad fija de maná cuando se recogen.
+
+
+Sistema :
+
+Equipamiento Único: El jugador solo necesita gestionar el bastón mágico y los orbes de vida y maná.
+
+Interfaz Simplificada: Un HUD básico que muestra salud y maná, sin necesidad de un inventario complejo.
+
+Imagenes y personaje : (https://docs.google.com/document/d/12sx1IPsTbVwLbc2NnmKigJUyqS_sch4eNbrGOBEclag/edit?usp=sharing)
