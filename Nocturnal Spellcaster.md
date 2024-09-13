@@ -3,7 +3,7 @@
 ## Resumen Técnico
 - Alumno: Ezequiel Maida 
 - Género/s: Acción, Aventura, RPG
-- Camara: Primera persona
+- Camara: Tercera Persona
 - Adicional: Minimap
 
 ## TP4
