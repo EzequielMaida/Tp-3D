@@ -21,18 +21,17 @@ public class TPDisparadorController : MonoBehaviour
     [Header("Disparo")]
     public GameObject balaPrefab;
     public Transform balaSpawnPosition;
+    public float tiempoEntreDisparos = 0.5f; // Tiempo en segundos entre cada disparo
+    private float tiempoUltimoDisparo;
 
     public Rig aimRig;
 
-
     private int aimLayerIndex;
-
-
-
 
     private void Start()
     {
         aimLayerIndex = animator.GetLayerIndex("Aim");
+        tiempoUltimoDisparo = -tiempoEntreDisparos; // Permite disparar inmediatamente al inicio
     }
 
     private void Update()
@@ -50,8 +49,6 @@ public class TPDisparadorController : MonoBehaviour
         crosshair.SetActive(true);
         aimTarget.gameObject.SetActive(true);
 
-        // aimRig.weight = 1f;
-        // animator.SetLayerWeight(aimLayerIndex, 1f);
         var weight = Mathf.Lerp(aimRig.weight, 1f, Time.deltaTime * 10f);
         aimRig.weight = weight;
         animator.SetLayerWeight(aimLayerIndex, weight);
@@ -66,8 +63,6 @@ public class TPDisparadorController : MonoBehaviour
         crosshair.SetActive(false);
         aimTarget.gameObject.SetActive(false);
 
-        // aimRig.weight = 0f;
-        // animator.SetLayerWeight(aimLayerIndex, 0f);
         var weight = Mathf.Lerp(aimRig.weight, 0f, Time.deltaTime * 10f);
         aimRig.weight = weight;
         animator.SetLayerWeight(aimLayerIndex, weight);
@@ -75,32 +70,35 @@ public class TPDisparadorController : MonoBehaviour
 
     private void MoveAimTarget()
     {
-        // Aim
         var mouseWorldPosition = Vector3.zero;
 
         var screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
         if (Physics.Raycast(ray, out RaycastHit hit, 999f, aimColliderMask))
         {
-            // Muevo el objetivo para que la pistola lo mire
             aimTarget.position = hit.point;
             mouseWorldPosition = hit.point;
         }
 
-        // Hago que el jugador mire en la direccion del mouse en el mundo
         var aimDirection = (mouseWorldPosition - transform.position).normalized;
-        // transform.forward = aimDirection;
         transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 1f);
 
-        // Disparo
-        if (input.shoot)
+        // Disparo con cooldown
+        if (input.shoot && Time.time >= tiempoUltimoDisparo + tiempoEntreDisparos)
         {
-            var balaDirection = (mouseWorldPosition - balaSpawnPosition.position).normalized;
-
-            Instantiate(
-                balaPrefab, balaSpawnPosition.position,
-                Quaternion.LookRotation(balaDirection, Vector3.up)
-            );
+            Disparar(mouseWorldPosition);
+            tiempoUltimoDisparo = Time.time;
         }
+    }
+
+    private void Disparar(Vector3 objetivo)
+    {
+        var balaDirection = (objetivo - balaSpawnPosition.position).normalized;
+
+        Instantiate(
+            balaPrefab, 
+            balaSpawnPosition.position,
+            Quaternion.LookRotation(balaDirection, Vector3.up)
+        );
     }
 }
