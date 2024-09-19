@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = 10f;
-    public GameObject impactPrefab;
 
     void Start()
     {
@@ -15,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(impactPrefab, transform.position, transform.rotation);
+
         Debug.Log(other.gameObject.name);
         Destroy(gameObject);
 
