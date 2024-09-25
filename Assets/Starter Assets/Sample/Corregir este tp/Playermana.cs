@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Necesario para trabajar con elementos de UI
+using UnityEngine.UI;
 
 public class PlayerMana : MonoBehaviour
 {
     public int maxMana = 100;
     public int currentMana;
-    public float manaRegenRate = 1f; // Maná regenerado por segundo
-    public float manaRegenDelay = 2f; // Tiempo de espera antes de regenerar maná
+    public float manaRegenRate = 1f;
+    public float manaRegenDelay = 2f;
 
-    public Text manaText; // Referencia al texto de UI que muestra el maná
-    public Image manaBar; // Referencia a la barra de maná en la UI
+    [Header("UI Elements")]
+    public Image manaBarFill;
+    public Text manaText;
 
     private float lastManaUseTime;
 
@@ -23,7 +24,6 @@ public class PlayerMana : MonoBehaviour
 
     private void Update()
     {
-        // Regenerar maná después del tiempo de espera
         if (Time.time > lastManaUseTime + manaRegenDelay && currentMana < maxMana)
         {
             RegenerateMana();
@@ -60,14 +60,14 @@ public class PlayerMana : MonoBehaviour
 
     private void UpdateManaUI()
     {
+        if (manaBarFill != null)
+        {
+            manaBarFill.fillAmount = (float)currentMana / maxMana;
+        }
+
         if (manaText != null)
         {
             manaText.text = currentMana + " / " + maxMana;
-        }
-
-        if (manaBar != null)
-        {
-            manaBar.fillAmount = (float)currentMana / maxMana;
         }
     }
 }
